@@ -9,6 +9,7 @@ public class WhenSteps {
     public void iLoginOnOpenCarts() throws Exception {
         // Write code here that turns the phrase above into concrete actions
         OpenCartPage.myAccountClick();
+        OpenCartPage.myAccountLogin();
 
 
     }

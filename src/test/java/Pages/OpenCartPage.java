@@ -17,10 +17,15 @@ public class OpenCartPage {
     //find elements
     @FindBy(xpath = "//a[contains(@class, 'dropdown-toggle')]/span[contains(@class, 'hidden-xs hidden-sm hidden-md')]")
     private static WebElement myAccount;
+    @FindBy(xpath = "//ul[contains(@class, 'dropdown-menu dropdown-menu-right')]/li[2]/a")
+    private static WebElement myAccountLogin;
 
     //method
-    public static void myAccountClick() {
+    public static void myAccountLogin() {
+        myAccountLogin.click();
+    }public static void myAccountClick() {
         myAccount.click();
     }
+
 
 }
