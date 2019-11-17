@@ -18,8 +18,9 @@ public class ThenSteps {
     }
 
     @Then("^Verify cart is empty$")
-    public void verifyCartIsEmpty() {
+    public void verifyCartIsEmpty()throws Exception {
         OpenCartPage.checkCartIsEmpty();
+        Thread.sleep(4000);
 //        Driver.getDriver().getCurrentUrl().matches("https://demo.opencart.com/index.php?route=checkout/cart");
 
     }
