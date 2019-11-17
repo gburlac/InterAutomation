@@ -28,4 +28,12 @@ public class WhenSteps {
         OpenCartPage.clickOnGoToCart();
 
     }
+
+    @When("^Remove from cart$")
+    public void removeFromCart() throws Exception {
+
+        OpenCartPage.clickRemoveFromCart();
+//        Thread.sleep(3000);
+
+    }
 }

@@ -5,6 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertTrue;
+
 public class OpenCartPage {
     //initializing
     private static final String URL = "https://demo.opencart.com/";
@@ -29,11 +32,24 @@ public class OpenCartPage {
     private static WebElement pressOnCategory;
     @FindBy(xpath = "//div[contains(@class, 'button-group')]/button[1]")
     private static WebElement clickOnAddToCart;
-    @FindBy(xpath = "//div[contains(@class, 'alert alert-success alert-dismissible')]/a[2]")
+    @FindBy(xpath = "//li[4]/a/span[contains(@class, 'hidden-xs hidden-sm hidden-md')]")
     private static WebElement clickOnGoToCart;
+    @FindBy(xpath = "//span/button[contains(@class, 'btn btn-danger')]")
+    private static WebElement clickRemoveFromCart;
+    @FindBy(xpath = "//a[contains(@class, 'btn btn-primary')]")
+    private static WebElement checkCartIsEmpty;
+
 
 
     //method
+    public static void checkCartIsEmpty() {
+        assertTrue(checkCartIsEmpty.isDisplayed());
+    }
+
+    public static void clickRemoveFromCart() {
+        clickRemoveFromCart.click();
+    }
+
     public static void clickOnGoToCart() {
         clickOnGoToCart.click();
     }

@@ -6,3 +6,5 @@ Feature:Order products on OpenCart
       | testing6@gmail.com | parola123 |
     And Add product to cart
     Then Check product is in cart
+    When Remove from cart
+    Then Verify cart is empty
