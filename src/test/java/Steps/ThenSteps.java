@@ -1,9 +1,13 @@
 package Steps;
 
+import Pages.OpenCartPage;
 import Util.Driver;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
+import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
 public class ThenSteps {
@@ -11,5 +15,12 @@ public class ThenSteps {
     public void checkProductIsInCart() {
         String messageCheck = Driver.getDriver().findElement(By.xpath("//table[contains(@class, 'table table-bordered')]/tbody/tr/td[contains(@class, 'text-left')][1]/a")).getText();
         assertTrue(messageCheck.contains("Samsung Galaxy Tab 10.1"));
+    }
+
+    @Then("^Verify cart is empty$")
+    public void verifyCartIsEmpty() {
+        OpenCartPage.checkCartIsEmpty();
+//        Driver.getDriver().getCurrentUrl().matches("https://demo.opencart.com/index.php?route=checkout/cart");
+
     }
 }
