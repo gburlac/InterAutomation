@@ -14,14 +14,16 @@ public class ThenSteps {
     @Then("^Check product is in cart$")
     public void checkProductIsInCart() {
         String messageCheck = Driver.getDriver().findElement(By.xpath("//table[contains(@class, 'table table-bordered')]/tbody/tr/td[contains(@class, 'text-left')][1]/a")).getText();
-        assertTrue(messageCheck.contains("Samsung Galaxy Tab 10.1"));
+        assertTrue(messageCheck.contains("Samsung Galaxy"));
     }
 
     @Then("^Verify cart is empty$")
     public void verifyCartIsEmpty()throws Exception {
         OpenCartPage.checkCartIsEmpty();
-        Thread.sleep(4000);
-//        Driver.getDriver().getCurrentUrl().matches("https://demo.opencart.com/index.php?route=checkout/cart");
+//        Thread.sleep(4000);
+
 
     }
+
+
 }

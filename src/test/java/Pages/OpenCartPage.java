@@ -5,6 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.HashMap;
+import java.util.List;
+
 import static junit.framework.Assert.assertTrue;
 
 public class OpenCartPage {
@@ -42,9 +45,17 @@ public class OpenCartPage {
     @FindBy(xpath = "//div[contains(@class, 'product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12')][2]/div[contains(@class, 'product-thumb')]/div[2]/div[contains(@class," +
             " 'button-group')]/button[1]/span[contains(@class, 'hidden-xs hidden-sm hidden-md')]")
     private static WebElement clickOnAddToCart2Products;
+    @FindBy(xpath = "//form/.//table/.//tr")
+    private static WebElement tableRows;
 
 
     //method
+//    public static void getTableCells(){
+////        List<HashMap<String, String>>
+//        List<WebElement> rows = (List<WebElement>) tableRows;
+//        rows.stream().forEach(it -> it.findElement("/td"));
+//    }
+
     public static void clickOnAddToCart2Products() {
         clickOnAddToCart2Products.click();
     }
