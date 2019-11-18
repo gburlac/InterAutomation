@@ -8,3 +8,6 @@ Feature:Order products on OpenCart
     Then Check product is in cart
     When Remove from cart
     Then Verify cart is empty
+    When Add multiple products to cart
+   # And Remove one product from cart
+    #Then Verify removed product from cart

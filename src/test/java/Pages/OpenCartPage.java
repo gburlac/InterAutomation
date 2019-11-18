@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
 public class OpenCartPage {
@@ -38,12 +37,25 @@ public class OpenCartPage {
     private static WebElement clickRemoveFromCart;
     @FindBy(xpath = "//a[contains(@class, 'btn btn-primary')]")
     private static WebElement checkCartIsEmpty;
-
+    @FindBy(xpath = "//li[7]/a")
+    private static WebElement clickOnCategory2;
+    @FindBy(xpath = "//div[contains(@class, 'product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12')][2]/div[contains(@class, 'product-thumb')]/div[2]/div[contains(@class," +
+            " 'button-group')]/button[1]/span[contains(@class, 'hidden-xs hidden-sm hidden-md')]")
+    private static WebElement clickOnAddToCart2Products;
 
 
     //method
+    public static void clickOnAddToCart2Products() {
+        clickOnAddToCart2Products.click();
+    }
+
+    public static void clickOnCategory2() {
+        clickOnCategory2.click();
+    }
+
     public static void checkCartIsEmpty() {
         assertTrue(checkCartIsEmpty.isDisplayed());
+//        assertTrue(checkCartIsEmpty.isEnabled());
     }
 
     public static void clickRemoveFromCart() {

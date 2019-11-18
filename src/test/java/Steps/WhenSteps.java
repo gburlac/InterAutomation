@@ -36,4 +36,15 @@ public class WhenSteps {
 //        Thread.sleep(3000);
 
     }
+
+    @When("^Add multiple products to cart$")
+    public void addMultipleProductsToCart() {
+        OpenCartPage.pressOnCategory();
+        OpenCartPage.clickOnAddToCart();
+        OpenCartPage.clickOnCategory2();
+        OpenCartPage.clickOnAddToCart2Products();
+
+
+
+    }
 }
