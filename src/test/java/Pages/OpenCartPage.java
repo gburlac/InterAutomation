@@ -5,9 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.HashMap;
-import java.util.List;
-
+import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
 public class OpenCartPage {
@@ -38,7 +36,7 @@ public class OpenCartPage {
     private static WebElement clickOnGoToCart;
     @FindBy(xpath = "//span/button[contains(@class, 'btn btn-danger')]")
     private static WebElement clickRemoveFromCart;
-    @FindBy(xpath = "//a[contains(@class, 'btn btn-primary')]")
+    @FindBy(xpath = "//table[contains(@class, 'table table-bordered')]/tbody/tr/td[contains(@class, 'text-left')][1]/a")
     private static WebElement checkCartIsEmpty;
     @FindBy(xpath = "//li[7]/a")
     private static WebElement clickOnCategory2;
@@ -47,6 +45,9 @@ public class OpenCartPage {
     private static WebElement clickOnAddToCart2Products;
     @FindBy(xpath = "//form/.//table/.//tr")
     private static WebElement tableRows;
+    @FindBy(xpath = "//*[@id=\"content\"]/form")
+    private static WebElement tableForm;
+    //*[@id="content"]/form
 
 
     //method
@@ -65,8 +66,12 @@ public class OpenCartPage {
     }
 
     public static void checkCartIsEmpty() {
-        assertTrue(checkCartIsEmpty.isDisplayed());
-//        assertTrue(checkCartIsEmpty.isEnabled());
+        try {
+            assertFalse(checkCartIsEmpty.isDisplayed());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static void clickRemoveFromCart() {
