@@ -1,15 +1,21 @@
 package Pages;
 
 import Util.Driver;
+import com.sun.org.slf4j.internal.LoggerFactory;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static Util.AssertUtils.isElementPresent;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
 public class OpenCartPage {
     //initializing
+    private static Logger logger = Logger.getLogger(OpenCartPage.class);
+
     private static final String URL = "https://demo.opencart.com/";
 
     public static void initialisePage() {
@@ -36,7 +42,9 @@ public class OpenCartPage {
     private static WebElement clickOnGoToCart;
     @FindBy(xpath = "//span/button[contains(@class, 'btn btn-danger')]")
     private static WebElement clickRemoveFromCart;
-    @FindBy(xpath = "//table[contains(@class, 'table table-bordered')]/tbody/tr/td[contains(@class, 'text-left')][1]/a")
+    @FindBy(xpath = "/html/body/div[2]/div[2]/div/form")
+    private static WebElement checkCartIsProduct;
+    @FindBy(xpath = "/html/body/div[2]/div[2]/div/form")
     private static WebElement checkCartIsEmpty;
     @FindBy(xpath = "//li[7]/a")
     private static WebElement clickOnCategory2;
@@ -57,6 +65,12 @@ public class OpenCartPage {
 //        rows.stream().forEach(it -> it.findElement("/td"));
 //    }
 
+    public static void checkCartIsEmpty() {
+//        logger.log(Level.INFO, "Check if cart is empty");
+        assertFalse(isElementPresent(checkCartIsEmpty));
+
+    }
+
     public static void clickOnAddToCart2Products() {
         clickOnAddToCart2Products.click();
     }
@@ -65,12 +79,8 @@ public class OpenCartPage {
         clickOnCategory2.click();
     }
 
-    public static void checkCartIsEmpty() {
-        try {
-            assertFalse(checkCartIsEmpty.isDisplayed());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public static void checkCartIsProduct() {
+        assertTrue(checkCartIsProduct.isDisplayed());
 
     }
 

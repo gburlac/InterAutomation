@@ -15,3 +15,8 @@ b.	You have at least one usage of assertThat with matcher, you could use Matcher
 c.	You have at least two different argument sources for your Parameterized tests(Method source, Enum source, CSV source, Value source,…)
 d.	You have at least one usage of assertThrows
 
+
+Selenium task:
+Log in, add to cart, check product is in cart
+Log in, Add to cart, remove from cart, check cart empty
+Log in, Add multiple, remove one, check removed
