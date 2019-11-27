@@ -1,14 +1,18 @@
-package Pages;
+package pages;
 
-import Util.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import util.Driver;
 
+import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
+import static util.AssertUtils.isElementPresent;
 
 public class OpenCartPage {
     //initializing
+//    private static Logger logger = Logger.getLogger(OpenCartPage.class);
+
     private static final String URL = "https://demo.opencart.com/";
 
     public static void initialisePage() {
@@ -35,16 +39,35 @@ public class OpenCartPage {
     private static WebElement clickOnGoToCart;
     @FindBy(xpath = "//span/button[contains(@class, 'btn btn-danger')]")
     private static WebElement clickRemoveFromCart;
-    @FindBy(xpath = "//a[contains(@class, 'btn btn-primary')]")
+    @FindBy(xpath = "/html/body/div[2]/div[2]/div/form")
+    private static WebElement checkCartIsProduct;
+    @FindBy(xpath = "/html/body/div[2]/div[2]/div/form")
     private static WebElement checkCartIsEmpty;
     @FindBy(xpath = "//li[7]/a")
     private static WebElement clickOnCategory2;
     @FindBy(xpath = "//div[contains(@class, 'product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12')][2]/div[contains(@class, 'product-thumb')]/div[2]/div[contains(@class," +
             " 'button-group')]/button[1]/span[contains(@class, 'hidden-xs hidden-sm hidden-md')]")
     private static WebElement clickOnAddToCart2Products;
+    @FindBy(xpath = "//form/.//table/.//tr")
+    private static WebElement tableRows;
+    @FindBy(xpath = "//*[@id=\"content\"]/form")
+    private static WebElement tableForm;
+    //*[@id="content"]/form
 
 
     //method
+//    public static void getTableCells(){
+////        List<HashMap<String, String>>
+//        List<WebElement> rows = (List<WebElement>) tableRows;
+//        rows.stream().forEach(it -> it.findElement("/td"));
+//    }
+
+    public static void checkCartIsEmpty() {
+//        logger.log(Level.INFO, "Check if cart is empty");
+        assertFalse(isElementPresent(checkCartIsEmpty));
+
+    }
+
     public static void clickOnAddToCart2Products() {
         clickOnAddToCart2Products.click();
     }
@@ -53,9 +76,9 @@ public class OpenCartPage {
         clickOnCategory2.click();
     }
 
-    public static void checkCartIsEmpty() {
-        assertTrue(checkCartIsEmpty.isDisplayed());
-//        assertTrue(checkCartIsEmpty.isEnabled());
+    public static void checkCartIsProduct() {
+        assertTrue(checkCartIsProduct.isDisplayed());
+
     }
 
     public static void clickRemoveFromCart() {
