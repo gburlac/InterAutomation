@@ -1,20 +1,17 @@
-package Pages;
+package pages;
 
-import Util.Driver;
-import com.sun.org.slf4j.internal.LoggerFactory;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import util.Driver;
 
-import static Util.AssertUtils.isElementPresent;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
+import static util.AssertUtils.isElementPresent;
 
 public class OpenCartPage {
     //initializing
-    private static Logger logger = Logger.getLogger(OpenCartPage.class);
+//    private static Logger logger = Logger.getLogger(OpenCartPage.class);
 
     private static final String URL = "https://demo.opencart.com/";
 

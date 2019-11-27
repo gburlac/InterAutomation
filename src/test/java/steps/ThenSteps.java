@@ -1,8 +1,8 @@
-package Steps;
+package steps;
 
-import Pages.OpenCartPage;
-import Util.Driver;
 import cucumber.api.java.en.Then;
+import pages.OpenCartPage;
+import util.Driver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,8 +19,6 @@ public class ThenSteps {
         Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         Thread.sleep(1000);
         OpenCartPage.checkCartIsEmpty();
-
-
 
 
     }

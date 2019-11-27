@@ -1,4 +1,4 @@
-package Junittask;
+package junittask;
 
 import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.Assertions;
@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TestJunit {
     JunituTasku calc = new JunituTasku();
@@ -76,5 +77,11 @@ public class TestJunit {
         });
     }
 
+    @Test
+    void assThrowexamlpe() {
+        assertThrows(NullPointerException.class, () -> {
+            calc.divide(11, 0);
+        });
+    }
 
 }

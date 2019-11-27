@@ -1,8 +1,8 @@
-package Steps;
+package steps;
 
-import Util.Driver;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import util.Driver;
 
 public class BeforeAfterSteps {
     @Before

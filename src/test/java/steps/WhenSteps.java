@@ -1,9 +1,9 @@
-package Steps;
+package steps;
 
-import Pages.OpenCartPage;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
+import pages.OpenCartPage;
 
 import java.util.List;
 

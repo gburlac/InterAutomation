@@ -1,4 +1,4 @@
-package Junittask;
+package junittask;
 
 public class JunituTasku {
 
