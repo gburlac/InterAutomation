@@ -46,11 +46,12 @@ public class TestAPI {
                         equalTo("A New Projectaniheeiadtatd"));
     }
 
-    String xmlBnm = "https://www.bnm.md/ro/official_exchange_rates?get_xml=1&date=26.11.2019";
+    String xmlBnm = "https://www.bnm.md/ro/official_exchange_rates?get_xml=1&date=28.11.2019";
 
     @Test
     public void xmlRestAssEx() {
-        RestAssured.when().get(xmlBnm).then().log().all().assertThat().body("ValCurs.Valute[0].CharCode", equalTo("EUR"));
+        RestAssured.when().get(xmlBnm).then().log().status().assertThat().body("ValCurs.Valute[17].CharCode", equalTo("GBP"));
+        RestAssured.when().get(xmlBnm).then().log().status().assertThat().body("ValCurs.Valute[17].Value",equalTo("22.4422"));
     }
 
 }

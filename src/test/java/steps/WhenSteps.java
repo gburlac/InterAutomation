@@ -19,6 +19,7 @@ public class WhenSteps {
         OpenCartPage.pressLoginButon();
 
 
+
     }
 
     @And("^Add product to cart$")

@@ -26,4 +26,8 @@ public class JunituTasku {
         }
         return 0;
     }
+    public double simpleDivide(double firstNumber, double secondNumber){
+        return firstNumber/secondNumber;
+    }
+
 }
