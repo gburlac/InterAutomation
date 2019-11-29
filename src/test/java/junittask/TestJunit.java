@@ -22,7 +22,7 @@ public class TestJunit {
     @Test
     @DisplayName("Divide test positiv")
     void divide() {
-        assertEquals(2, calc.divide(4, 2));
+        assertEquals(0, calc.divide(11, 0));
 
     }
 
@@ -79,8 +79,8 @@ public class TestJunit {
 
     @Test
     void assThrowexamlpe() {
-        assertThrows(NullPointerException.class, () -> {
-            calc.divide(11, 0);
+        assertThrows(ArithmeticException.class, () -> {
+            calc.simpleDivide(11,0);
         });
     }
 

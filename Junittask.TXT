@@ -20,3 +20,20 @@ Selenium task:
 Log in, add to cart, check product is in cart
 Log in, Add to cart, remove from cart, check cart empty
 Log in, Add multiple, remove one, check removed
+
+Exeption task:
+-Define a method which divides two numbers. Call it with zeroes(put as parameter zero “0”).
+Re-write method with handling exception (which kind is it?)
+- Using  Class.forName() method, try to create object of non-existing class. Write two methods:
+one of which handles exception in his body and one that throws exception further (which kind is it?)
+- Define method, which throws an AssertionError (compare two strings using assert).
+Rewrite this method handling this error. Print out these strings after asserting them.
+- Define your own exception, override method getMessage() with your own message.
+Define other class and method which throws your custom exception.
+Rewrite this method, defining root cause (for example, NullPointerException) for thrown exception.
+Call .printStackTrace() method and compare what you have in console and what this method returns.
+
+Keep in mind, Junit has mechanism that help you to ensure that method you call (or actions you make) throws an exception.
+
+DO NOT hesitate to use google to find solutions (knowledge you have gained during presentations is not complete).
+
