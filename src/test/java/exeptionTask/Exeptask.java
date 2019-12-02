@@ -1,5 +1,11 @@
 package exeptionTask;
 
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class Exeptask {
     //    static String name;
 //
@@ -52,12 +58,40 @@ public class Exeptask {
         throw new Exception(message);
     }
 
-    public static void main(String[] args) throws ClassNotFoundException {
-        divideZero(5, 0);
-        noFoundClass();
-        noFoundClass2();
+    @Test
+    public static void testAssertStrings() throws AssertionError {
+        String a = "asd";
+        String b = "asd";
+        try {
+            assertThrows(AssertionError.class, () -> {
+                assertTrue(a == b);
+            });
+            System.out.println("No Coincide");
 
+        } catch (AssertionError error) {
+            System.out.println("First string: " + a);
+            System.out.println("Second string: " + b);
+        }
+    }
+
+    void printStackTrace(String message) {
+
+    }
+
+
+    public static void main(String[] args) throws CustomExept {
+//        divideZero(5, 0);
+//        noFoundClass();
+//        noFoundClass2();
+        try {
+            testAssertStrings();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+
+       throw new CustomExept("I'm fuck up");
 
 
     }
+
 }
