@@ -83,13 +83,30 @@ public class Exeptask {
 //        divideZero(5, 0);
 //        noFoundClass();
 //        noFoundClass2();
-        try {
-            testAssertStrings();
-        } catch (Throwable e) {
-            e.printStackTrace();
-        }
+//        try {
+//            testAssertStrings();
+//        } catch (Throwable e) {
+//            e.printStackTrace();
+//        }
+//
+//       throw new CustomExept("I'm fuck up");
 
-       throw new CustomExept("I'm fuck up");
+        int [][] matrix ={{5,2,3,4},
+                {1,6,3,4},
+                {1,2,3,4},
+                {1,2,3,4}};
+        int sum = 0;
+        for(int x=0;x<4;x++){
+            for(int m=0;m<4;m++){
+                System.out.print(matrix[x][m]+ "\t");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i <matrix.length; i++) {
+
+            sum += matrix[i][i];
+        }
+        System.out.println(sum);
 
 
     }
